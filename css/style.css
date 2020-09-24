@@ -237,6 +237,7 @@ footer {
     position: absolute;
     transition-timing-function: ease-out;
     animation: cursorAnim .5s infinite alternate;
+    left: -200px;
   }
   
   .cursor::after{
