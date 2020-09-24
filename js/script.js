@@ -3,15 +3,9 @@ gsap.registerPlugin(ScrollTrigger);
 //Title Animation:
 
 const tl= gsap.timeline();
-tl.to("#loadscreen",
-{delay: 1.5, duration: 0.5, scale: 0, /* x: "-50%", y: "-50%" ,*/ ease: "none"})
-tl.to("#loadscreen",
-{duration: 0.1, y: -5000, ease: "none"})
 tl.from(".logo", 
 {duration: 1.5, opacity: 0, scale: 0.3, ease: "back", });
 tl.from("#banner-text", {duration: 2, opacity: 0, y: "random(-200, 200)", stagger: 0.25}, "-=0.5");
-
-
 
 //Arrow:
 
@@ -58,10 +52,10 @@ projectLink.addEventListener('click', () => {
       });
 })
 
-const aboutLink = document.querySelector('.about-link');
+// const aboutLink = document.querySelector('.about-link');
 
-aboutLink.addEventListener('click', () => {
-    window.location ='#about';
-})
+// aboutLink.addEventListener('click', () => {
+//     window.location ='#about';
+// })
 
 

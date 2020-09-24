@@ -16,6 +16,9 @@ html {
   position: relative;
 }
 
+body {
+  cursor: none;
+}
 
 #loadscreen {
   z-index: 4;
@@ -23,10 +26,25 @@ html {
   position: fixed;
   top: 50%;
   left: 50%;
-  height: 10000px;
-  width: 10000px;
+  height: 0;
+  width: 0;
   transform: translate(-50%, -50%);
-  border-radius: 50%;
+  border-radius: 0;
+  animation: shrink 2s forwards;
+}
+
+@keyframes shrink{
+  0% {
+    height: 100vh;
+    width: 100%;
+  }
+  85%{
+    border-radius: 50%;
+  }
+  100% {
+    height: 0px;
+    width: 0px;
+  }
 }
 
 #loadscreen h3{
@@ -36,7 +54,10 @@ html {
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
+  animation: shrink 3s forwards;
 }
+
+
 
 #nav-bar {
   margin-top: 25px;
@@ -78,6 +99,11 @@ a:hover {
   color: var(--amber-sae-ece);
 }
 
+.project-link:hover {
+  color: var(--amber-sae-ece);
+  
+}
+
 #icons {
   grid-area: icons;
   text-align: right;
@@ -108,6 +134,26 @@ header {
   display: grid;
   grid-template-columns: auto;
   justify-content: center;
+  background: var(--columbia-blue);
+  animation: pulse 12s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background: var(--columbia-blue);
+    
+  }
+
+  33%{
+    background: var(--amber-sae-ece);
+  }
+
+  67%{
+    background: var(--minion-yellow);
+  }
+  100% {
+    background: var(--columbia-blue);
+  }
 }
 
 .logo {
@@ -118,10 +164,12 @@ header {
 }
 
 #banner-text {
-  padding-top: 150px;
+  padding-top: 100px;
 }
 
 .scroll-down {
+  position: relative;
+  bottom: 60px;
   transform: translate(0%, 50%);
   color: black;
   font-weight: 400;
@@ -145,6 +193,7 @@ header {
   height: 100vh;
   background: var(--dark-sky-blue);
 }
+
 
 #content {
   padding-top: 80px;
@@ -171,11 +220,77 @@ footer {
   color: var(--columbia-blue);
 }
 
-@media (min-width: 840px) {
-
+@media screen and (min-width: 700px) {
+  .cursor {
+    z-index: 3;
+    width: 40px;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 50%;
+    position: absolute;
+    transition-timing-function: ease-out;
+    animation: cursorAnim .5s infinite alternate;
+  }
+  
+  .cursor::after{
+    content: "";
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    border: 8px solid gray;
+    border-radius: 50%;
+    opacity: .5;
+    top: -8px;
+    left: -8px;
+    animation: cursorAnim2 .5s infinite alternate;
+  
+  }
+  
+  @keyframes cursorAnim {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(0.7);
+    }
+  }
+  
+  @keyframes cursorAnim2 {
+    from {
+      transform: scale(1)
+    }
+    to {
+      transform: scale(0.4);
+    }
+  }
+  
+  @keyframes cursorAnim3 {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(3);
+    }
+  
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  
+  }
+  
+  .expand {
+    animation: cursorAnim3 .5s forwards;
+    border: 1px solid red;
+  }
 }
 
 @media screen and (max-width: 600px) {
+
+  #loadscreen {
+    height: 1000px;
+    width: 1000px;
+  }
 
   header {
     grid-template-areas:
@@ -207,5 +322,4 @@ footer {
     max-width: 100vw;
     height: auto;
   }
-
 }
