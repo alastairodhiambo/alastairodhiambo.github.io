@@ -89,7 +89,7 @@ li {
 
 a {
   text-decoration: none;
-  color: var(--jet);
+  color: black;
   font-family: arial;
   font-weight: bold;
   font-size: 0.8em;
@@ -158,8 +158,8 @@ header {
 
 .logo {
   position: relative;
-  top: 175px;
-  width: 400px;
+  top: 50vh;
+  width: 500px;
   height: auto;
 }
 
@@ -181,10 +181,11 @@ header {
   position: relative;
   top: -4px;
   margin: 0 auto;
-  width: 20px;
-  height: 20px;
-  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KPHBhdGggZmlsbD0iYmxhY2siIGQ9Ik00ODMuMiwxOTIuMmMtMjAuNS0yMC41LTUzLjUtMjAuOC03My43LTAuNkwyNTcsMzQ0LjFMMTA0LjUsMTkxLjZjLTIwLjItMjAuMi01My4yLTE5LjktNzMuNywwLjYKCWMtMjAuNSwyMC41LTIwLjgsNTMuNS0wLjYsNzMuN2wxOTAsMTkwYzEwLjEsMTAuMSwyMy40LDE1LjEsMzYuOCwxNWMxMy4zLDAuMSwyNi43LTQuOSwzNi44LTE1bDE5MC0xOTAKCUM1MDMuOSwyNDUuNyw1MDMuNywyMTIuNyw0ODMuMiwxOTIuMnoiLz4KPC9zdmc+);
+  width: 50px;
+  height: 50px;
+  background-image: url("../img/arrow-drawn.png");
   background-size: contain;
+  background-repeat: no-repeat;
 }
 
 #about {
