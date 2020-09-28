@@ -17,7 +17,6 @@ html {
 }
 
 body {
-  cursor: none;
   overflow-x:hidden
 }
 
@@ -46,10 +45,9 @@ body {
   } */
   100% {
     top: 50px;
-    left: 75px;
     transform: 0px;
     height: 0px;
-    width: 80px;
+    width: 100%;
   }
 }
 
@@ -96,9 +94,6 @@ li {
 a {
   text-decoration: none;
   color: black;
-  font-family: arial;
-  font-weight: bold;
-  font-size: 0.8em;
 }
 
 a:hover {
@@ -169,13 +164,13 @@ header {
   height: auto;
 }
 
-#banner-text {
-  padding-top: 100px;
+#github {
+  margin-left: 20px;
 }
 
 .scroll-down {
   position: relative;
-  bottom: 50px;
+  bottom: 0px;
   transform: translate(0%, 50%);
   color: black;
   font-weight: 400;
@@ -185,7 +180,7 @@ header {
 }
 .scroll-down .arrow {
   position: relative;
-  top: -4px;
+  top: 50px;
   margin: 0 auto;
   width: 50px;
   height: 50px;
@@ -194,15 +189,39 @@ header {
   background-repeat: no-repeat;
 }
 
-#about {
+#content{
   padding-top: 80px;
   width: 100%;
   height: 100vh;
   background: var(--dark-sky-blue);
+  /* display: grid;
+  grid-template-columns: auto;
+  justify-content: center; */
+}
+
+.carousel-container {
+  overflow: hidden;
+  width: 75%;
+  margin: auto;
+  border: 5px solid black;
+  margin-top: 50px;
+  max-height: 800px;
+}
+
+.carousel-slide {
+  display: flex;
+  width: 100%;
+  max-height: 800px;
+}
+
+.carousel-slide img {
+  height: auto;
+  width: 100%;
 }
 
 
-#content {
+
+#about {
   padding-top: 80px;
   margin: auto;
   height: 100vh;
@@ -225,72 +244,6 @@ footer {
   padding: 20px 0px;
   margin: 0;
   color: var(--columbia-blue);
-}
-
-@media screen and (min-width: 700px) {
-  .cursor {
-    z-index: 3;
-    width: 40px;
-    height: 40px;
-    border: 1px solid white;
-    border-radius: 50%;
-    position: absolute;
-    transition-timing-function: ease-out;
-    animation: cursorAnim .5s infinite alternate;
-    left: -200px;
-  }
-  
-  .cursor::after{
-    content: "";
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    border: 8px solid gray;
-    border-radius: 50%;
-    opacity: .5;
-    top: -8px;
-    left: -8px;
-    animation: cursorAnim2 .5s infinite alternate;
-  
-  }
-  
-  @keyframes cursorAnim {
-    from {
-      transform: scale(1);
-    }
-    to {
-      transform: scale(0.7);
-    }
-  }
-  
-  @keyframes cursorAnim2 {
-    from {
-      transform: scale(1)
-    }
-    to {
-      transform: scale(0.4);
-    }
-  }
-  
-  @keyframes cursorAnim3 {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(3);
-    }
-  
-    100% {
-      transform: scale(1);
-      opacity: 0;
-    }
-  
-  }
-  
-  .expand {
-    animation: cursorAnim3 .5s forwards;
-    border: 1px solid red;
-  }
 }
 
 @media screen and (max-width: 600px) {
@@ -328,14 +281,29 @@ footer {
     font-size: 4em;
   }
 
+  #nav-bar {
+    margin-top: 15px;
+    z-index: 2;
+    grid-area: nav-bar;
+    text-align: center;
+  }
+
   ul {
     font-size: 1.2em;
+    display: grid;
+    grid-template-columns: auto auto;
   }
 
   #icons {
-    display: none;
-    pointer-events: none;
+    position: fixed;
+    top: 0px;
+    left: 15px;
     font-size: 2.3em;
+  }
+
+  #github {
+    position: fixed;
+    right: 15px;
   }
   
   .logo {
@@ -347,4 +315,30 @@ footer {
   .scroll-down {
     bottom: 30px;
   }
+
+  .scroll-down .arrow{
+    top: -4px;
+  }
+
+  .carousel-container {
+    overflow: hidden;
+    width: 75%;
+    margin: auto;
+    border: 5px solid black;
+    margin-top: 50px;
+    max-height: 800px;
+  }
+  
+  .carousel-slide {
+    display: flex;
+    width: 100%;
+    max-height: 500px;
+  }
+  
+  .carousel-slide img {
+    height: 100%;
+    width: auto;
+  }
+
+
 }

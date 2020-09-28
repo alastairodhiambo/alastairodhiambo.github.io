@@ -1,62 +1,54 @@
-gsap.registerPlugin(ScrollTrigger);
+/* window.onload = function() {
 
-//Title Animation:
+    let projectContainer = document.querySelector('#project-container');
 
-const tl= gsap.timeline();
-tl.from(".logo", 
-{delay: 1.5, duration: 1, opacity: 0, y: -300, ease: "back", });
-tl.from("#banner-text", {duration: 2, opacity: 0, y: "random(-200, 200)", stagger: 0.25}, "-=0.5");
+    for(let i= 0; i < 4; i++){
+        let projectWrapper = document.createElement('div');
+        projectWrapper.className = 'project-wrapper';
+        projectContainer.appendChild(projectWrapper);
+    }
 
-//Arrow:
-gsap.from(".arrow",{delay: 1.5, opacity: 0, duration: 2})
-gsap.to(".arrow", {y: 12, ease: "power1.inOut", repeat: -1, yoyo: true});
-
+} */
 
 
-//Scroll Animation:
+const carouselSlide = document.querySelector('.carousel-slide');
+const carouselImages = document.querySelectorAll('.carousel-slide img');
 
-function goToSection(i, anim) {
-  gsap.to(window, {
-    scrollTo: {y: i*innerHeight, autoKill: false},
-    duration: 1.0, 
-    ease: "power1.inOut"
-  });
-  
-  if(anim) {
-    anim.restart();
-  }
-}
+//Buttons
+const prevBtn = document.querySelector('#prevBtn');
+const nextBtn = document.querySelector('#nextBtn');
 
-gsap.utils.toArray(".tiles").forEach((tile, i) => {
-  ScrollTrigger.create({
-    trigger: tile,
-    onEnter: () => goToSection(i)
-  });
-  
-  ScrollTrigger.create({
-    trigger: tile,
-    start: "bottom bottom",
-    onEnterBack: () => goToSection(i),
-  });
-});
+//Counter
+let counter = 1;
+const size = carouselImages[0].clientWidth;
 
+carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px';
 
+//Button Listeners
 
-const projectLink = document.querySelector('.project-link');
-projectLink.addEventListener('click', () => {
-    window.location ='#projects';
-
-    //Workaround
-    ScrollTrigger.create({
-        trigger: "#about",
-        onEnter: () => goToSection("#projects")
-      });
+nextBtn.addEventListener('click', () => {
+    if(counter >= carouselImages.length - 1) return;
+    carouselSlide.style.transition = 'transform 0.4s ease-in-out';
+    counter++;
+    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px'; 
 })
 
-// const aboutLink = document.querySelector('.about-link');
+prevBtn.addEventListener('click', () => {
+    if(counter <= 0) return;
+    carouselSlide.style.transition = 'transform 0.4s ease-in-out';
+    counter--;
+    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px'; 
+})
 
-// aboutLink.addEventListener('click', () => {
-//     window.location ='#about';
-// })
-
-
+carouselSlide.addEventListener('transitionend', () => {
+    if(carouselImages[counter].id === 'lastClone'){
+        carouselSlide.style.transition = 'none';
+        counter = carouselImages.length -2;
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px';
+    }
+    if(carouselImages[counter].id === 'firstClone'){
+        carouselSlide.style.transition = 'none';
+        counter = carouselImages.length - counter;
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px';
+    }
+});
