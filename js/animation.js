@@ -21,9 +21,9 @@ function goToSection(i, anim) {
     ease: "power1.inOut"
   });
   
-  /*if(anim) {
+  if(anim) {
     anim.restart();
-  }*/
+  }
 }
 
 gsap.utils.toArray(".tiles").forEach((tile, i) => {
