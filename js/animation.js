@@ -16,7 +16,7 @@ gsap.to(".arrow", {y: 12, ease: "power1.inOut", repeat: -1, yoyo: true});
 
 function goToSection(i, anim) {
   gsap.to(window, {
-    scrollTo: {y: i*innerHeight, autoKill: true},
+    scrollTo: {y: i*innerHeight, autoKill: false},
     duration: 1.0, 
     ease: "power1.inOut"
   });
