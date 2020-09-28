@@ -12,7 +12,7 @@
 
 
 const carouselSlide = document.querySelector('.carousel-slide');
-const carouselImages = document.querySelectorAll('.carousel-slide img');
+const carouselImages = document.querySelectorAll('.carousel-element');
 
 //Buttons
 const prevBtn = document.querySelector('#prevBtn');
@@ -52,3 +52,10 @@ carouselSlide.addEventListener('transitionend', () => {
         carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px';
     }
 });
+
+
+
+descContainer = carouselImages.createElement('div');
+descContainer.style('position:absolute;bottom:20px;right:20px;width:100px;height:100px;background:grey');
+descContainer.className('description-container');
+carouselImages.appendChild(descContainer);
