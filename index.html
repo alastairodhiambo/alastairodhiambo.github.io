@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Personal Portfolio showcasing a few of my projects."
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alastair Odhiambo</title>
     <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -16,147 +20,111 @@
       rel="stylesheet"
     />
   </head>
-  <html>
-    <body>
-      <div class="cursor"></div>
-      <header id="header">
-        <a href="index.html">
-          <img id="main-logo" src="../img/main-logo.png" alt="AO" />
-        </a>
+  <body>
+    <div class="cursor"></div>
+    <header id="header">
+      <a href="index.html">
+        <img id="main-logo" src="../img/main-logo.png" alt="AO" />
+      </a>
 
-        <nav id="nav-bar">
-          <ul>
-            <li class="nav-link project-link">
-              <a href="#content">PROJECTS</a>
-            </li>
-            <li class="nav-link about-link"><a href="#about">ABOUT</a></li>
-          </ul>
-        </nav>
-        <div id="icons">
-          <a
-            id="email"
-            class="nav-link"
-            href="mailto:alastairodhiambo@outlook.com"
-            ><i class="fas fa-envelope"></i
-          ></a>
-          <a
-            id="github"
-            href="https://github.com/alastairodhiambo"
-            target="__blank"
-            ><i class="fab fa-github"></i
-          ></a>
-        </div>
-      </header>
-
-      <div id="loadscreen">
-        <!-- <h3>LOADING</h3> -->
+      <nav id="nav-bar">
+        <ul>
+          <li class="nav-link project-link">
+            <a href="#content">PROJECTS</a>
+          </li>
+          <li class="nav-link about-link"><a href="#about">ABOUT</a></li>
+        </ul>
+      </nav>
+      <div id="icons">
+        <a id="email" href="mailto:alastairodhiambo@outlook.com"
+          ><i class="fas fa-envelope"></i
+        ></a>
+        <a
+          id="github"
+          href="https://github.com/alastairodhiambo"
+          target=”_blank”
+          ><i class="fab fa-github"></i
+        ></a>
       </div>
+    </header>
 
-      <div class="tiles" id="banner">
-        <img
-          class="logo"
-          src="img/banner-description.png"
-          alt="banner-description"
-        />
-        <div class="scroll-down"><div class="arrow"></div></div>
-      </div>
+    <!-- <div id="loadscreen">
+        <h3>LOADING</h3>
+      </div> -->
 
-      <div class="tiles" id="content">
-        <div class="carousel-container">
-          <i class="fas fa-chevron-left" id="prevBtn"></i>
-          <i class="fas fa-chevron-right" id="nextBtn"></i>
-          <div class="carousel-slide">
-            <div class="carousel-element" id="lastClone">
-              <img
-                src="/img/database-interaction-app.png"
-                alt="database-interaction-app"
-              />
-              <div class="container">
-                <div class="image"></div>
-                <div class="description">
-                  <div class="languages"></div>
-                  <div class="summary">
-                    <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-element">
-              <img src="/img/oasis.png" alt="oasis" />
-              <div class="container">
-                <div class="image"></div>
-                <div class="description">
-                  <div class="languages"></div>
-                  <div class="summary"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</p></div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-element">
-              <div class="container">
-                <div class="image"></div>
-                <div class="description">
-                  <div class="languages"></div>
-                  <div class="summary"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</p></div>
-                </div>
-              </div>
-              <img src="/img/parking-app.png" alt="parking-app" />
-            </div>
-            <div class="carousel-element">
-              <div class="container">
-                <div class="image"></div>
-                <div class="description">
-                  <div class="languages"></div>
-                  <div class="summary"><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.</p></div>
-                </div>
-              </div>
-              <img
-                src="/img/database-interaction-app.png"
-                alt="database-interaction-app"
-              />
-            </div>
-            <div class="carousel-element" id="firstClone">
-              <img src="/img/oasis.png" alt="oasis" />
-            </div>
-            <!-- <div class="carousel-element video1 "><iframe src="https://www.youtube.com/embed/SayNGKdvWOA?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div> -->
+    <div class="tiles" id="banner">
+      <img
+        class="logo banner-name"
+        src="img/Banner-Alastair.png"
+        alt="Banner-Alastair"
+      />
+      <img
+        class="logo banner-description"
+        src="img/banner-description.png"
+        alt="banner-description"
+      />
+      <div class="scroll-down"><div class="arrow"></div></div>
+    </div>
+
+    <div class="tiles" id="content">
+      <div class="carousel-container">
+        <i class="fas fa-chevron-left" id="prevBtn"></i>
+        <i class="fas fa-chevron-right" id="nextBtn"></i>
+        <div class="carousel-slide">
+          <div class="carousel-element" id="lastClone">
+            <img
+              src="/img/database-interaction-app.webp"
+              alt="database-interaction-app"
+            />
+          </div>
+          <div class="carousel-element">
+            <img src="/img/oasis.webp" alt="oasis" />
+          </div>
+          <div class="carousel-element">
+            <img src="/img/parking-app.webp" alt="parking-app" />
+          </div>
+          <div class="carousel-element">
+            <img
+              src="/img/database-interaction-app.webp"
+              alt="database-interaction-app"
+            />
+          </div>
+          <div class="carousel-element" id="firstClone">
+            <img src="/img/oasis.webp" alt="oasis" />
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="tiles" id="about">
-        <!-- <h2 id="about-me">About Me</h2> -->
-      </div>
-      <div class="tiles" id="last-section"></div>
+    <div class="tiles" id="about">
+      <!-- <h2 id="about-me">About Me</h2> -->
+    </div>
+    <div class="tiles" id="last-section"></div>
 
-      <footer>&copy; 2020 Alastair Odhiambo</footer>
+    <footer>&copy; 2020 Alastair Odhiambo</footer>
 
-      <script>
-        const cursor = document.querySelector(".cursor");
+    <script>
+      const cursor = document.querySelector(".cursor");
 
-        document.addEventListener("mousemove", (e) => {
-          cursor.setAttribute(
-            "style",
-            "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px"
-          );
-        });
+      document.addEventListener("mousemove", (e) => {
+        cursor.setAttribute(
+          "style",
+          "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px"
+        );
+      });
 
-        document.addEventListener("click", () => {
-          cursor.classList.add("expand");
-          setTimeout(() => {
-            cursor.classList.remove("expand");
-          }, 500);
-        });
-      </script>
+      document.addEventListener("click", () => {
+        cursor.classList.add("expand");
+        setTimeout(() => {
+          cursor.classList.remove("expand");
+        }, 500);
+      });
+    </script>
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>
-      <script src="js/animation.js"></script>
-      <script src="js/script.js"></script>
-    </body>
-  </html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/script.js"></script>
+  </body>
 </html>

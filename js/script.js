@@ -1,61 +1,130 @@
-/* window.onload = function() {
+window.onload = function() {
 
-    let projectContainer = document.querySelector('#project-container');
+    const carouselSlide = document.querySelector('.carousel-slide');
+    const carouselElement = document.querySelectorAll('.carousel-element');
 
-    for(let i= 0; i < 4; i++){
-        let projectWrapper = document.createElement('div');
-        projectWrapper.className = 'project-wrapper';
-        projectContainer.appendChild(projectWrapper);
+    //Buttons
+    const prevBtn = document.querySelector('#prevBtn');
+    const nextBtn = document.querySelector('#nextBtn');
+
+    //Counter
+    let counter = 1;
+    const size = carouselElement[0].clientWidth;
+
+    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px';
+
+    //Button Listeners
+
+    nextBtn.addEventListener('click', () => {
+        if(counter >= carouselElement.length - 1) return;
+        carouselSlide.style.transition = 'transform 0.4s ease-in-out';
+        counter++;
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px'; 
+    })
+
+    prevBtn.addEventListener('click', () => {
+        if(counter <= 0) return;
+        carouselSlide.style.transition = 'transform 0.4s ease-in-out';
+        counter--;
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px'; 
+    })
+
+    carouselSlide.addEventListener('transitionend', () => {
+        if(carouselElement[counter].id === 'lastClone'){
+            carouselSlide.style.transition = 'none';
+            counter = carouselElement.length -2;
+            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px';
+        }
+        if(carouselElement[counter].id === 'firstClone'){
+            carouselSlide.style.transition = 'none';
+            counter = carouselElement.length - counter;
+            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px';
+        }
+    });
+
+
+    //Project Cards:
+
+    const projectCards = [
+        {
+            "name":"Database Interaction App",
+            "technology":"C++",
+            "summary": "A console program that accesses a database in Oracle. It takes input from the user and it creates/updates the respective attributes in the table. It also has an option to display all the rows in such table.",
+            "video": ""
+        },
+        {
+            "name":"Clothing Web Store",
+            "technology":"JavaScript, HTML, CSS",
+            "summary": "A mock web store using strictly HTML, CSS and VanillaJS.",
+            "video": ""
+        },
+        {
+            "name":"Parking App",
+            "technology":"C++",
+            "summary": "This project simulates a parking complex, allowing vehicles to enter and exit the building. There are a limited amount of parking spots and the program acts accordingly. The car owners are also able to decide if they want a car wash.",
+            "video": ""
+        },
+        {
+            "name":"Database Interaction App",
+            "technology":"C++",
+            "summary": "A console program that accesses a database in Oracle. It takes input from the user and it creates/updates the respective attributes in the table. It also has an option to display all the rows in such table.",
+            "video": "<iframe title='Database Interaction App' src='https://www.youtube.com/embed/hOwn9FdO_i0?controls=0?' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;' allowfullscreen></iframe>"
+        },
+        {
+            "name":"Clothing Web Store",
+            "technology":"JavaScript, HTML, CSS",
+            "summary": "A mock web store using strictly HTML, CSS and VanillaJS.",
+            "video": ""
+        }
+    ];
+
+    for(let i in projectCards)
+    {
+        let container = document.createElement('div');
+        container.className = 'container';
+        carouselElement[i].appendChild(container);
+
+        let image = document.createElement('div');
+        image.className = 'image';
+            
+        if (window.matchMedia("(max-width: 600px)").matches) {
+                image.innerHTML = '';
+        } else {
+                image.innerHTML = projectCards[i].video;
+        };
+        
+        container.appendChild(image);
+
+        let description = document.createElement('div');
+        description.className = 'description';
+        container.appendChild(description);
+
+        let technology = document.createElement('div');
+        technology.className = 'technology';
+        technology.innerText = projectCards[i].technology;
+        description.appendChild(technology);
+
+        let summary = document.createElement('div');
+        summary.className = 'summary';
+        summary.innerText = projectCards[i].summary;
+        description.appendChild(summary);
     }
 
-} */
+    /* const video = document.querySelectorAll(".image");
 
+    video.forEach(function(item){
+        item.addEventListener('mouseover', hoverVideo, false);
+        item.addEventListener('mouseout', hideVideo, false);
+    });
 
-const carouselSlide = document.querySelector('.carousel-slide');
-const carouselImages = document.querySelectorAll('.carousel-element');
-
-//Buttons
-const prevBtn = document.querySelector('#prevBtn');
-const nextBtn = document.querySelector('#nextBtn');
-
-//Counter
-let counter = 1;
-const size = carouselImages[0].clientWidth;
-
-carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px';
-
-//Button Listeners
-
-nextBtn.addEventListener('click', () => {
-    if(counter >= carouselImages.length - 1) return;
-    carouselSlide.style.transition = 'transform 0.4s ease-in-out';
-    counter++;
-    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px'; 
-})
-
-prevBtn.addEventListener('click', () => {
-    if(counter <= 0) return;
-    carouselSlide.style.transition = 'transform 0.4s ease-in-out';
-    counter--;
-    carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px'; 
-})
-
-carouselSlide.addEventListener('transitionend', () => {
-    if(carouselImages[counter].id === 'lastClone'){
-        carouselSlide.style.transition = 'none';
-        counter = carouselImages.length -2;
-        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px';
+    function hoverVideo(e)
+    {
+        console.log('hovering');
+        document.querySelector('iframe').setAttribute('autoplay', '1');
     }
-    if(carouselImages[counter].id === 'firstClone'){
-        carouselSlide.style.transition = 'none';
-        counter = carouselImages.length - counter;
-        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px';
-    }
-});
 
+    function hideVideo(e){
+        console.log('off');
+    } */
 
-
-descContainer = carouselImages.createElement('div');
-descContainer.style('position:absolute;bottom:20px;right:20px;width:100px;height:100px;background:grey');
-descContainer.className('description-container');
-carouselImages.appendChild(descContainer);
+}

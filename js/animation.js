@@ -3,8 +3,8 @@ gsap.registerPlugin(ScrollTrigger);
 //Title Animation:
 
 const tl= gsap.timeline();
-tl.from(".logo", 
-{delay: 1.5, duration: 1, opacity: 0, y: -300, ease: "back", });
+// tl.from(".logo", 
+// {delay: 1.5, duration: 1, opacity: 0, y: -200, ease: "back", });
 
 //Arrow:
 gsap.from(".arrow",{delay: 1.5, opacity: 0, duration: 2})
@@ -38,3 +38,24 @@ gsap.utils.toArray(".tiles").forEach((tile, i) => {
     onEnterBack: () => goToSection(i),
   });
 });
+
+
+
+// const projectLink = document.querySelector('.project-link');
+// projectLink.addEventListener('click', () => {
+//     window.location ='#projects';
+
+//     //Workaround
+//     ScrollTrigger.create({
+//         trigger: "#about",
+//         onEnter: () => goToSection("#projects")
+//       });
+// })
+
+// const aboutLink = document.querySelector('.about-link');
+
+// aboutLink.addEventListener('click', () => {
+//     window.location ='#about';
+// })
+
+
