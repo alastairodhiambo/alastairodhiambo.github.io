@@ -21,7 +21,6 @@
     />
   </head>
   <body>
-    <div class="cursor"></div>
     <header id="header">
       <a href="index.html">
         <img id="main-logo" src="../img/main-logo.png" alt="AO" />
@@ -42,16 +41,12 @@
         <a
           id="github"
           href="https://github.com/alastairodhiambo"
-          target=”_blank”
+          target="”_blank”"
           ><i class="fab fa-github"></i
         ></a>
       </div>
     </header>
-
-    <!-- <div id="loadscreen">
-        <h3>LOADING</h3>
-      </div> -->
-
+    
     <div class="tiles" id="banner">
       <img
         class="logo banner-name"
@@ -97,30 +92,27 @@
     </div>
 
     <div class="tiles" id="about">
-      <!-- <h2 id="about-me">About Me</h2> -->
+      <div id="profile-pic"></div>
+      <div id="bio">
+        <p>
+          I like creating things. I'm curious about all things tech and focused on efficiency and scalability. Based in Toronto.
+        </p>
+      </div>
+      <div id="tech-skills">
+        <span class="language">C++/C</span>
+        <span class="language">JavaScript</span>
+        <span>HTML, CSS</span>
+        <span>SASS</span>
+        <span>Node.js</span>
+        <span class="database">OracleSQL</span>
+        <span class="database">SQL</span>
+        <span class="language">*Python</span>
+        <span>*Django</span>
+        <span>*MongoDB</span>
+        *In Progress
+      </div>
     </div>
-    <div class="tiles" id="last-section"></div>
-
     <footer>&copy; 2020 Alastair Odhiambo</footer>
-
-    <script>
-      const cursor = document.querySelector(".cursor");
-
-      document.addEventListener("mousemove", (e) => {
-        cursor.setAttribute(
-          "style",
-          "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px"
-        );
-      });
-
-      document.addEventListener("click", () => {
-        cursor.classList.add("expand");
-        setTimeout(() => {
-          cursor.classList.remove("expand");
-        }, 500);
-      });
-    </script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollToPlugin.min.js"></script>

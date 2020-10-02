@@ -9,7 +9,7 @@ function onHttpStart() {
   console.log("Express http server listening on: " + HTTP_PORT);
 }
 
-let directories = ['/css', '/img', '/js'];
+let directories = ["/css", "/img", "/js"];
 
 function useObjects(directory) {
   app.use(directory, express.static(__dirname + directory));
@@ -18,8 +18,8 @@ function useObjects(directory) {
 directories.forEach(useObjects);
 
 // setup a 'route' to listen on the default url path (http://localhost)
-app.get("/", function(req,res){
-    res.sendFile(path.join(__dirname,"index.html"));
+app.get("/", function (req, res) {
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
 // setup http server to listen on HTTP_PORT
