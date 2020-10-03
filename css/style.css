@@ -1,3 +1,5 @@
+/*Alastair Odhiambo*/
+
 * {
   margin: 0;
   padding: 0;
@@ -21,47 +23,6 @@ html {
 
 body {
   overflow-x: hidden;
-}
-
-#loadscreen {
-  z-index: 4;
-  background-color: black;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  height: 0;
-  width: 0;
-  transform: translate(-50%, -50%);
-  border-radius: 0;
-  animation: shrink 1.5s forwards;
-  animation-timing-function: ease-in;
-}
-
-@keyframes shrink {
-  0% {
-    height: 100vh;
-    width: 100%;
-  }
-  /* 50% {
-    height: 100vh;
-    width: 100%;
-  } */
-  100% {
-    top: 50px;
-    transform: 0px;
-    height: 0px;
-    width: 100%;
-  }
-}
-
-#loadscreen h3 {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  animation: shrink 3s forwards;
 }
 
 #nav-bar {
@@ -124,7 +85,6 @@ header {
   display: grid;
   grid-template-areas: "main-logo nav-bar icons";
   justify-content: space-between;
-  /*   align-items: center; */
   background: none;
   z-index: 3;
 }
@@ -206,35 +166,40 @@ header {
 }
 
 .carousel-container {
-  overflow: hidden;
-  width: 70%;
-  margin: auto;
-  border: 5px solid black;
-  margin-top: 50px;
-  height: 100%;
-  max-height: 800px;
   position: relative;
-  box-shadow: 0 10px 20px 10px rgba(0, 0, 0, 0.5);
-}
-
-.carousel-slide {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  max-height: 800px;
-}
-
-.carousel-element {
-  max-width: 100%;
-  max-height: 800px;
-  position: relative;
+  top: 80px;
+  height: 70vh;
+  width: 80%;
+  margin: 0 auto;
+  box-shadow: 0 -5px 20px 5px rgba(0, 0, 0, 0.5);
 }
 
 .carousel-element img {
+  width: 100%;
   height: 100%;
-  width: auto;
-  max-width: 1410px;
-  max-height: 790px;
+  object-fit: cover;
+}
+
+.carousel-slider {
+  background: black;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-track {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  height: 100%;
+  transition: transform 250ms ease-in;
+}
+
+.carousel-element {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 .container {
@@ -242,15 +207,15 @@ header {
   right: 100px;
   bottom: 10px;
   margin: 10px;
-  height: 600px;
-  width: 600px;
+  height: 400px;
+  width: 400px;
   background: transparent;
   border-radius: 5px;
 }
 
 .image {
-  height: 400px;
-  width: 600px;
+  height: 200px;
+  width: 400px;
   background: transparent;
   margin-bottom: 20px;
 }
@@ -265,7 +230,7 @@ iframe {
   margin-left: 20px;
   padding: 10px;
   height: 160px;
-  width: 560px;
+  width: 375px;
   border-radius: 3px;
   background: linear-gradient(
     rgba(230, 100, 101),
@@ -284,26 +249,71 @@ iframe {
   margin-bottom: 10px;
 }
 
-#prevBtn, #nextBtn {
+.container-link {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  margin: 10px;
+  margin-left: 20px;
+  height: 50px;
+  width: 80px;
+  border-radius: 3px;
+  background: linear-gradient(
+    rgba(230, 100, 101),
+    rgba(145, 152, 229)
+  );
+  border-radius: 20px;
+  color: white;
+  box-shadow: 0 10px 20px 10px rgba(0, 0, 0, 0.5);
+  line-height: 50px;
+}
+
+.carousel-button {
+  z-index: 10;
   position: absolute;
   top: 50%;
-  z-index: 10;
+  transform: translateY(-50%);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+#prevBtn, #nextBtn {
   font-size: 30px;
   color: white;
   opacity: 0.8;
 }
 
-#prevBtn {
-  left: 5%;
+.carousel-button--left {
+  left: 10px;
 }
 
-#nextBtn {
-  right: 5%;
+.carousel-button--right {
+  right: 10px;
 }
 
-#prevBtn:hover,#nextBtn:hover {
-  transform: scale(1.4, 1.4);
-  transition: all 0.5s ease-out;
+.carousel-nav {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.carousel-indicator {
+  border: 0;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background: rgba(0,0,0,.3);
+  margin: 0 12px;
+  cursor: pointer;
+}
+
+.carousel-indicator.current-slide {
+  background: rgba(0,0,0,.75);
+}
+
+.is-hidden {
+  display: none;
 }
 
 #about {
@@ -452,34 +462,18 @@ footer {
     top: -4px;
   }
 
-  .carousel-container {
-    overflow: hidden;
-    width: 75%;
-    margin: auto;
-    border: 5px solid black;
-    margin-top: 60px;
-    max-height: 75%;
-  }
 
   #prevBtn:hover,#nextBtn:hover {
     transform: none;
     transition: none;
   }
 
-  .carousel-slide {
-    display: flex;
-    width: 100%;
-    max-height: 500px;
-  }
-
-  .carousel-element img {
-    height: 100%;
-    max-height: 700px;
-    width: auto;
+  .carousel-container {
+    top: 90px;
   }
 
   .container {
-    top: 90px;
+    top: 100px;
     right: 0px;
     background: transparent;
     width: 100%;
@@ -499,7 +493,7 @@ footer {
     margin-left: 20px;
     padding: 10px;
     height: 150px;
-    width: 95%;
+    width: 93%;
     border-radius: 3px;
     display: grid;
     justify-items: center;
@@ -513,12 +507,24 @@ footer {
   font-size: 0.8em;
   }
 
+  .container-link {
+    position: absolute;
+    bottom: 20px;
+    left: 15px;
+    margin: 10px;
+    height: 50px;
+    width: 80px;
+    line-height: 50px;
+  }
+
   .technology {
     height: 40px;
     min-width: 100px;
     max-width: 200px;
     display: flex;
     flex-wrap: wrap;
+    font-size: 0.8em;
+    font-weight: 400;
   }
 
   #profile-pic {

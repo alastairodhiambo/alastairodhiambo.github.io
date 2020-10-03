@@ -1,3 +1,5 @@
+<!-- Alastair Odhiambo -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,13 +31,13 @@
       <nav id="nav-bar">
         <ul>
           <li class="nav-link project-link">
-            <a href="#content">PROJECTS</a>
+            <a href="./index.html#content">PROJECTS</a>
           </li>
-          <li class="nav-link about-link"><a href="#about">ABOUT</a></li>
+          <li class="nav-link about-link"><a href="./index.html#about">ABOUT</a></li>
         </ul>
       </nav>
       <div id="icons">
-        <a id="email" href="mailto:alastairodhiambo@outlook.com"
+        <a id="email" href="./contact.html"
           ><i class="fas fa-envelope"></i
         ></a>
         <a
@@ -46,7 +48,7 @@
         ></a>
       </div>
     </header>
-    
+
     <div class="tiles" id="banner">
       <img
         class="logo banner-name"
@@ -63,30 +65,22 @@
 
     <div class="tiles" id="content">
       <div class="carousel-container">
-        <i class="fas fa-chevron-left" id="prevBtn"></i>
-        <i class="fas fa-chevron-right" id="nextBtn"></i>
-        <div class="carousel-slide">
-          <div class="carousel-element" id="lastClone">
-            <img
-              src="/img/database-interaction-app.webp"
-              alt="database-interaction-app"
-            />
-          </div>
-          <div class="carousel-element">
-            <img src="/img/oasis.webp" alt="oasis" />
-          </div>
-          <div class="carousel-element">
-            <img src="/img/parking-app.webp" alt="parking-app" />
-          </div>
-          <div class="carousel-element">
-            <img
-              src="/img/database-interaction-app.webp"
-              alt="database-interaction-app"
-            />
-          </div>
-          <div class="carousel-element" id="firstClone">
-            <img src="/img/oasis.webp" alt="oasis" />
-          </div>
+        <button class="carousel-button carousel-button--left is-hidden"><i class="fas fa-chevron-left" id="prevBtn"></i></button>
+
+        <div class="carousel-slider">
+          <ul class="carousel-track">
+            <li class="carousel-element current-slide"></li>
+            <li class="carousel-element"></li>
+            <li class="carousel-element"></li>
+          </ul>
+        </div>
+
+        <button class="carousel-button carousel-button--right"><i class="fas fa-chevron-right" id="nextBtn"></i></button>
+
+        <div class="carousel-nav">
+          <button class="carousel-indicator current-slide"></button>
+          <button class="carousel-indicator"></button>
+          <button class="carousel-indicator"></button>
         </div>
       </div>
     </div>
@@ -95,7 +89,8 @@
       <div id="profile-pic"></div>
       <div id="bio">
         <p>
-          I like creating things. I'm curious about all things tech and focused on efficiency and scalability. Based in Toronto.
+          I like creating things. I'm curious about all things tech and focused
+          on efficiency and scalability. Based in Toronto.
         </p>
       </div>
       <div id="tech-skills">

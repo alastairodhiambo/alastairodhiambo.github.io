@@ -1,0 +1,68 @@
+/*Alastair Odhiambo*/
+
+#contact-content {
+    font-family: 'Roboto Slab', serif;
+    color: black;
+    height: 100vh;
+    min-height: 800px;
+    padding: 30px;
+    font-size: 1.2em;
+    background: var(--columbia-blue);
+    display: grid;
+    grid-template-columns: auto;
+    justify-items: center;
+  }
+  
+  #contact-content form {
+    margin-top: 120px;
+    width: 75vw;
+    max-width: 500px;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    grid-gap: 20px;
+    align-items: center;
+    height: 80vh;
+  }
+  
+  #contact-content form label {
+    font-family: 'Cormorant', serif;
+    font-size: 1.5em;
+  }
+  
+  #contact-content input {
+    width: 100%;
+    padding: 0.2em;
+    font-size: 1.4em;
+    font-family: 'Cormorant', serif;
+    border: 1px solid rgb(206, 212, 218);
+    background-color: var(--jet);
+    color: var(--minion-yellow);
+    border-radius: 10px;
+  }
+  
+  #contact-content input:focus {
+    border-color: blue;
+  }
+  
+  #contact-content input[type='submit'] {
+    width: 150px;
+    background-color: var(--amber-sae-ece);
+    color: var(--jet);
+  }
+  
+  #contact-content input[type='submit']:hover,
+  #contact-content input[type='submit']:focus {
+    background-color: var(--minion-yellow);
+  }
+  
+  #contact-content textarea {
+    width: 100%;
+    padding: 0.2em;
+    font-size: 1em;
+    font-family: 'Cormorant', serif;
+    border: 1px solid rgb(206, 212, 218);
+    background-color: var(--jet);
+    color: var(--minion-yellow);
+    border-radius: 10px;
+  }
