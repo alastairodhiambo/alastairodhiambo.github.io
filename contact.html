@@ -33,13 +33,13 @@
           <li class="nav-link project-link">
             <a href="./index.html#content">PROJECTS</a>
           </li>
-          <li class="nav-link about-link"><a href="./index.html#about">ABOUT</a></li>
+          <li class="nav-link about-link">
+            <a href="./index.html#about">ABOUT</a>
+          </li>
         </ul>
       </nav>
       <div id="icons">
-        <a id="email" href="./contact.html"
-          ><i class="fas fa-envelope"></i
-        ></a>
+        <a id="email" href="./contact.html"><i class="fas fa-envelope"></i></a>
         <a
           id="github"
           href="https://github.com/alastairodhiambo"
@@ -51,9 +51,14 @@
 
     <main>
       <div id="contact-content">
-        <form id="contact-form" action="https://httpbin.org/post" method="POST">
+        <h1>Get in Touch!</h1>
+        <form
+          id="contact-form"
+          action="https://formspree.io/f/mgepoepw"
+          method="POST"
+        >
           <div>
-            <label for="contact-user">Name</label>
+            <label for="contact-user">*Name</label>
             <input
               id="contact-user"
               class="form-control"
@@ -67,7 +72,7 @@
           </div>
 
           <div>
-            <label for="contact-email">Email</label>
+            <label for="contact-email">*Email</label>
             <input
               id="contact-email"
               class="form-control"
@@ -88,18 +93,21 @@
               name="company"
               type="text"
               tabindex="3"
-              required
             />
           </div>
 
-          <textarea
-            id="contact-message"
-            class="form-control"
-            name="message"
-            rows="10"
-            tabindex="7"
-            required
-          ></textarea>
+          <div>
+            <label for="contact-message">*Message</label>
+            <textarea
+              id="contact-message"
+              class="form-control"
+              name="message"
+              rows="10"
+              tabindex="4"
+              placeholder="What's the message?"
+              required
+            ></textarea>
+          </div>
 
           <div>
             <input
@@ -107,7 +115,7 @@
               type="submit"
               name="submit"
               value="Submit"
-              tabindex="8"
+              tabindex="5"
             />
           </div>
 

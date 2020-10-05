@@ -10,11 +10,11 @@ window.onload = function () {
       image: "/img/oasis.webp",
       imageMobile: "/img/oasis-mobile.jpeg",
       alt: "oasis",
-      technology: ["JavaScript", "HTML", "CSS", "GSAP"],
+      technology: ["JavaScript", "HTML", "CSS"],
       summary: "A mock web store using strictly HTML, CSS and VanillaJS.",
       summaryMobile: "A mock clothing web store.",
       video: "",
-      link: "http://www.alastairodhiambo.com/Web_Store/",
+      link: "https://www.alastairodhiambo.com/Web_Store/",
       linkText: "Visit Site"
     },
     {
@@ -24,7 +24,7 @@ window.onload = function () {
       alt: "parking-app",
       technology: ["C++"],
       summary:
-        "This project simulates a parking complex, allowing vehicles to enter and exit the building. There are a limited amount of parking spots and the program acts accordingly. The car owners are also able to decide if they want a car wash.",
+        "This project simulates a parking complex, allowing vehicles to enter and exit the building. There are a limited amount of parking spots and the program acts accordingly.",
       summaryMobile:
         "This project simulates a parking complex, allowing vehicles to enter and exit the building.",
       video: "",
@@ -38,7 +38,7 @@ window.onload = function () {
       alt: "database-interaction-app",
       technology: ["C++", "Oracle SQL"],
       summary:
-        "A console program that accesses a database in Oracle. It takes input from the user and it creates/updates the respective attributes in the table. It also has an option to display all the rows in such table.",
+        "A console program that accesses a database in Oracle. It takes input from the user and it creates/updates the respective attributes in the table.",
       summaryMobile: "A console program that accesses a database in Oracle.",
       video:
         "<iframe id='youtube' title='Database Interaction App' src='https://www.youtube.com/embed/hOwn9FdO_i0?controls=0?' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;' allowfullscreen></iframe>",
