@@ -90,11 +90,15 @@ header {
 }
 
 #banner {
+  position: relative;
   width: 100%;
   height: 100vh;
   display: grid;
   grid-template-columns: auto;
+  gap: 40px;
   justify-items: center;
+  align-items: center;
+  align-content: center;
   background: var(--columbia-blue);
   animation: pulse 12s infinite;
 }
@@ -118,14 +122,12 @@ header {
 
 .banner-name {
   position: relative;
-  top: 30vh;
   width: 700px;
   height: auto;
 }
 
 .banner-description {
   position: relative;
-  top: 10vh;
   width: 400px;
   height: auto;
 }
@@ -135,8 +137,9 @@ header {
 }
 
 .scroll-down {
-  position: relative;
-  bottom: 0px;
+  position: absolute;
+  align-self: end;
+  bottom: 90px;
   transform: translate(0%, 50%);
   color: black;
   font-weight: 400;
@@ -452,7 +455,7 @@ footer {
 
   .logo {
     width: 300px;
-    max-width: 100vw;
+    max-width: 90vw;
     height: auto;
   }
 
@@ -517,6 +520,7 @@ footer {
     height: 50px;
     width: 80px;
     line-height: 50px;
+    font-size: 0.8em;
   }
 
   .technology {
@@ -553,5 +557,31 @@ footer {
 
   #tech-skills {
     max-height: 175px;
+  }
+}
+
+
+@media screen and (max-height: 800px) {
+  .logo {
+    width: 300px;
+    max-width: 100vw;
+    height: auto;
+  }
+
+  .banner-name {
+    width: 400px;
+    max-width: 100vw;
+    height: auto;
+  }
+
+  #profile-pic {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    background: black url("../img/profile.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
