@@ -6,16 +6,23 @@ window.onload = function () {
   //Project Cards:
   const projectCards = [
     {
-      name: "Clothing Web Store",
-      image: "/img/oasis.webp",
-      imageMobile: "/img/oasis-mobile.jpeg",
-      alt: "oasis",
-      technology: ["JavaScript", "HTML", "CSS"],
-      summary: "A mock web store using strictly HTML, CSS and VanillaJS.",
-      summaryMobile: "A mock clothing web store.",
+      name: "AlBnB",
+      image: "/img/short-rental-platform.png",
+      imageMobile: "/img/short-rental-platform.png",
+      alt: "short-rental-platform",
+      technology: [
+        "Node.js",
+        "JavaScript",
+        "HTML, CSS",
+        "Express.js",
+        "Handlebars.js",
+        "MongoDB",
+      ],
+      summary: "A short rental platform similar to AirBnb.",
+      summaryMobile: "A short rental platform similar to AirBnb.",
       video: "",
-      link: "https://www.alastairodhiambo.com/Web_Store/",
-      linkText: "Visit Site"
+      link: "https://secure-stream-99879.herokuapp.com/",
+      linkText: "Visit Site",
     },
     {
       name: "Parking App",
@@ -29,7 +36,7 @@ window.onload = function () {
         "This project simulates a parking complex, allowing vehicles to enter and exit the building.",
       video: "",
       link: "https://repl.it/@alastairo/ParkingApp",
-      linkText: "Test it"
+      linkText: "Test it",
     },
     {
       name: "Database Interaction App",
@@ -41,9 +48,21 @@ window.onload = function () {
         "A console program that accesses a database in Oracle. It takes input from the user and it creates/updates the respective attributes in the table.",
       summaryMobile: "A console program that accesses a database in Oracle.",
       video:
-        "<iframe id='youtube' title='Database Interaction App' src='https://www.youtube.com/embed/hOwn9FdO_i0?controls=0?' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;' allowfullscreen></iframe>",
+        /* "<iframe id='youtube' title='Database Interaction App' src='https://www.youtube.com/embed/hOwn9FdO_i0?controls=0?' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;' allowfullscreen></iframe>" */ "",
       link: "https://github.com/alastairodhiambo/database_interaction_app",
-      linkText: "GitHub"
+      linkText: "GitHub",
+    },
+    {
+      name: "Clothing Web Store",
+      image: "/img/oasis.webp",
+      imageMobile: "/img/oasis-mobile.jpeg",
+      alt: "oasis",
+      technology: ["JavaScript", "HTML", "CSS"],
+      summary: "A mock web store using strictly HTML, CSS and VanillaJS.",
+      summaryMobile: "A mock clothing web store.",
+      video: "",
+      link: "https://www.alastairodhiambo.com/Web_Store/",
+      linkText: "Visit Site",
     },
   ];
 
@@ -83,13 +102,17 @@ window.onload = function () {
     description.appendChild(technology);
     const tech = document.querySelectorAll(".technology");
     let skill = card.technology;
+
+    const languages = ["C++", "JavaScript", "Node.js", "Python", "Java"];
+    const databases = ["Oracle SQL", "SQL", "MongoDB", "PostgreSQL"];
+
     for (let x in skill) {
       let span = document.createElement("span");
       span.innerText = skill[x];
       tech[i].appendChild(span);
-      if (skill[x] === "C++" || skill[x] === "JavaScript") {
+      if (languages.includes(skill[x])) {
         span.className = "language";
-      } else if (skill[x] === "Oracle SQL" || skill[x] === "SQL") {
+      } else if (databases.includes(skill[x])) {
         span.className = "database";
       }
     }
@@ -106,7 +129,7 @@ window.onload = function () {
     let containerLink = document.createElement("a");
     containerLink.className = "container-link";
     containerLink.href = card.link;
-    containerLink.target = "_blank"
+    containerLink.target = "_blank";
     containerLink.innerText = card.linkText;
     carouselElement[i].appendChild(containerLink);
   }
@@ -124,69 +147,68 @@ window.onload = function () {
 
   const setSlidePosition = (slide, index) => {
     slide.style.left = slideWidth * index + "px";
-  }
+  };
 
   slides.forEach(setSlidePosition);
 
-  const moveToSlide = (track, currentSlide, targetSlide) =>
-  {
-    track.style.transform = "translateX(-" + targetSlide.style.left + ')';
+  const moveToSlide = (track, currentSlide, targetSlide) => {
+    track.style.transform = "translateX(-" + targetSlide.style.left + ")";
     currentSlide.classList.remove("current-slide");
     targetSlide.classList.add("current-slide");
-  }
+  };
 
   const updateDots = (currentDot, targetDot) => {
     currentDot.classList.remove("current-slide");
     targetDot.classList.add("current-slide");
-  }
+  };
 
   const hideShowArrows = (slides, prevBtn, nextBtn, targetIndex) => {
     if (targetIndex === 0) {
       prevBtn.classList.add("is-hidden");
       nextBtn.classList.remove("is-hidden");
-    } else if (targetIndex === slides.length - 1){
+    } else if (targetIndex === slides.length - 1) {
       prevBtn.classList.remove("is-hidden");
       nextBtn.classList.add("is-hidden");
     } else {
-      prevBtn.classList.remove('is-hidden');
-      nextBtn.classList.remove('is-hidden');
+      prevBtn.classList.remove("is-hidden");
+      nextBtn.classList.remove("is-hidden");
     }
-  }
+  };
 
-  prevBtn.addEventListener("click", e => {
+  prevBtn.addEventListener("click", (e) => {
     const currentSlide = track.querySelector(".current-slide");
     const prevSlide = currentSlide.previousElementSibling;
     const currentDot = dotsNav.querySelector(".current-slide");
     const prevDot = currentDot.previousElementSibling;
-    const prevIndex = slides.findIndex(slide => slide === prevSlide);
+    const prevIndex = slides.findIndex((slide) => slide === prevSlide);
     moveToSlide(track, currentSlide, prevSlide);
     updateDots(currentDot, prevDot);
     hideShowArrows(slides, prevBtn, nextBtn, prevIndex);
-  })
+  });
 
-  nextBtn.addEventListener("click", e => {
+  nextBtn.addEventListener("click", (e) => {
     const currentSlide = track.querySelector(".current-slide");
     const nextSlide = currentSlide.nextElementSibling;
     const currentDot = dotsNav.querySelector(".current-slide");
     const nextDot = currentDot.nextElementSibling;
-    const nextIndex = slides.findIndex(slide => slide === nextSlide);
+    const nextIndex = slides.findIndex((slide) => slide === nextSlide);
     moveToSlide(track, currentSlide, nextSlide);
     updateDots(currentDot, nextDot);
     hideShowArrows(slides, prevBtn, nextBtn, nextIndex);
-  })
+  });
 
-  dotsNav.addEventListener('click', e => {
+  dotsNav.addEventListener("click", (e) => {
     const targetDot = e.target.closest("button");
 
-    if(!targetDot) return;
+    if (!targetDot) return;
 
     const currentSlide = track.querySelector(".current-slide");
     const currentDot = dotsNav.querySelector(".current-slide");
-    const targetIndex = dots.findIndex(dot => dot === targetDot);
+    const targetIndex = dots.findIndex((dot) => dot === targetDot);
     const targetSlide = slides[targetIndex];
 
     moveToSlide(track, currentSlide, targetSlide);
     updateDots(currentDot, targetDot);
     hideShowArrows(slides, prevBtn, nextBtn, targetIndex);
-  })
+  });
 };
