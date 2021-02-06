@@ -10,7 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "express.js": "^1.0.0",
-    "prettier": "^2.1.2"
+    "express.js": "^1.0.0"
   }
 }
