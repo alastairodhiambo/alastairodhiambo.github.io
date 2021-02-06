@@ -47,8 +47,7 @@ window.onload = function () {
       summary:
         "A console program that accesses a database in Oracle. It takes input from the user and it creates/updates the respective attributes in the table.",
       summaryMobile: "A console program that accesses a database in Oracle.",
-      video:
-        /* "<iframe id='youtube' title='Database Interaction App' src='https://www.youtube.com/embed/hOwn9FdO_i0?controls=0?' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;' allowfullscreen></iframe>" */ "",
+      video: "",
       link: "https://github.com/alastairodhiambo/database_interaction_app",
       linkText: "GitHub",
     },
